@@ -1,0 +1,17 @@
+<tr>
+    <td><%= produto.nome %></td>
+    <td><%= produto.descricao %></td>
+    <td>
+        <% if produto.departamento %>
+            <%= produto.departamento.nome %>
+        <% end %>
+    </td>
+    <td>R$<%= produto.preco %></td>
+    <td><%= produto.quantidade %></td>
+    <td>
+        <%= button_to "Remover", produto, method: :delete, class:"btn btn-danger", data: {confirm:"Deseja realmente apagar o produto #{produto.nome}?"} %>
+    </td>
+    <td>
+        <%= link_to "Alterar", edit_produto_path(produto), class:"btn btn-primary" %>
+    </td>
+</tr>
