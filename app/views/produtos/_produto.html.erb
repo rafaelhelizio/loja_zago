@@ -3,7 +3,9 @@
     <td><%= produto.descricao %></td>
     <td>
         <% if produto.departamento %>
-            <%= produto.departamento.nome %>
+            <%= link_to "#{produto.departamento.nome}", departamento_path(produto.departamento) %>
+        <% else %>
+            Sem departamento
         <% end %>
     </td>
     <td>R$<%= produto.preco %></td>
